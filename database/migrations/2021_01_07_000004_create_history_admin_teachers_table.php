@@ -9,7 +9,7 @@ class CreateHistoryAdminTeachersTable extends Migration
     public function up()
     {
         Schema::create('history_admin_teachers', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('title');
             $table->string('fist_name');
             $table->string('last_name');

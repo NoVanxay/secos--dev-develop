@@ -9,7 +9,7 @@ class CreateContentCategoriesTable extends Migration
     public function up()
     {
         Schema::create('content_categories', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('content_category')->unique();
             $table->timestamps();
             $table->softDeletes();

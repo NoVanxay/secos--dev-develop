@@ -148,18 +148,6 @@
                 <span class="help-block">{{ trans('cruds.student.fields.end_from_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="academic_years_id">{{ trans('cruds.student.fields.academic_years') }}</label>
-                <select class="form-control select2 {{ $errors->has('academic_years') ? 'is-invalid' : '' }}" name="academic_years_id" id="academic_years_id" required>
-                    @foreach($academic_years as $id => $academic_years)
-                        <option value="{{ $id }}" {{ old('academic_years_id') == $id ? 'selected' : '' }}>{{ $academic_years }}</option>
-                    @endforeach
-                </select>
-                @if($errors->has('academic_years'))
-                    <span class="text-danger">{{ $errors->first('academic_years') }}</span>
-                @endif
-                <span class="help-block">{{ trans('cruds.student.fields.academic_years_helper') }}</span>
-            </div>
-            <div class="form-group">
                 <label for="photo">{{ trans('cruds.student.fields.photo') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('photo') ? 'is-invalid' : '' }}" id="photo-dropzone">
                 </div>
@@ -185,20 +173,16 @@
                 <span class="help-block">{{ trans('cruds.student.fields.note_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="email_id">{{ trans('cruds.student.fields.email') }}</label>
-                <select class="form-control select2 {{ $errors->has('email') ? 'is-invalid' : '' }}" name="email_id" id="email_id" required>
-                    @foreach($emails as $id => $email)
-                        <option value="{{ $id }}" {{ old('email_id') == $id ? 'selected' : '' }}>{{ $email }}</option>
-                    @endforeach
-                </select>
+                <label for="email">{{ trans('cruds.student.fields.email') }}</label>
+                <input class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" type="email" name="email" id="email" value="{{ old('email') }}">
                 @if($errors->has('email'))
                     <span class="text-danger">{{ $errors->first('email') }}</span>
                 @endif
                 <span class="help-block">{{ trans('cruds.student.fields.email_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="password">{{ trans('cruds.student.fields.password') }}</label>
-                <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" type="password" name="password" id="password" required>
+                <label for="password">{{ trans('cruds.student.fields.password') }}</label>
+                <input class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" type="password" name="password" id="password">
                 @if($errors->has('password'))
                     <span class="text-danger">{{ $errors->first('password') }}</span>
                 @endif

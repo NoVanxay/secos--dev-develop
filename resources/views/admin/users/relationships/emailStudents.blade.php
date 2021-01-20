@@ -70,9 +70,6 @@
                                 {{ trans('cruds.student.fields.end_from') }}
                             </th>
                             <th>
-                                {{ trans('cruds.student.fields.academic_years') }}
-                            </th>
-                            <th>
                                 {{ trans('cruds.student.fields.photo') }}
                             </th>
                             <th>
@@ -85,13 +82,10 @@
                                 {{ trans('cruds.student.fields.email') }}
                             </th>
                             <th>
-                                {{ trans('cruds.user.fields.email') }}
-                            </th>
-                            <th>
                                 {{ trans('cruds.student.fields.roles') }}
                             </th>
                             <th>
-                                &nbsp;
+                                &nbsp;&nbsp;
                             </th>
                         </tr>
                     </thead>
@@ -150,9 +144,6 @@
                                     {{ $student->end_from ?? '' }}
                                 </td>
                                 <td>
-                                    {{ $student->academic_years->title ?? '' }}
-                                </td>
-                                <td>
                                     @if($student->photo)
                                         <a href="{{ $student->photo->getUrl() }}" target="_blank" style="display: inline-block">
                                             <img src="{{ $student->photo->getUrl('thumb') }}">
@@ -166,10 +157,7 @@
                                     {{ $student->note ?? '' }}
                                 </td>
                                 <td>
-                                    {{ $student->email->email ?? '' }}
-                                </td>
-                                <td>
-                                    {{ $student->email->email ?? '' }}
+                                    {{ $student->email ?? '' }}
                                 </td>
                                 <td>
                                     {{ $student->roles->title ?? '' }}

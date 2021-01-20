@@ -96,10 +96,6 @@ class StoreStudentRequest extends FormRequest
                 'max:50',
                 'required',
             ],
-            'academic_years_id' => [
-                'required',
-                'integer',
-            ],
             'phone_no'          => [
                 'nullable',
                 'numeric',
@@ -112,12 +108,14 @@ class StoreStudentRequest extends FormRequest
                 'max:255',
                 'nullable',
             ],
-            'email_id'          => [
-                'required',
-                'integer',
+            'email'          => [
+                'string',
+                'min:2',
+                'max:255',
+                'nullable',
             ],
             'password'          => [
-                'required',
+                'nullable',
             ],
             'roles_id'          => [
                 'required',

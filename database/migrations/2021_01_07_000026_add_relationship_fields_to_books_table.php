@@ -9,7 +9,7 @@ class AddRelationshipFieldsToBooksTable extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->unsignedInteger('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->foreign('category_id', 'category_fk_2911058')->references('id')->on('categories');
         });
     }

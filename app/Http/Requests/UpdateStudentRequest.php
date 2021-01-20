@@ -96,10 +96,6 @@ class UpdateStudentRequest extends FormRequest
                 'max:50',
                 'required',
             ],
-            'academic_years_id' => [
-                'required',
-                'integer',
-            ],
             'phone_no'          => [
                 'nullable',
                 'numeric',
@@ -112,9 +108,11 @@ class UpdateStudentRequest extends FormRequest
                 'max:255',
                 'nullable',
             ],
-            'email_id'          => [
-                'required',
-                'integer',
+            'email'          => [
+                'string',
+                'min:2',
+                'max:255',
+                'nullable',
             ],
             'roles_id'          => [
                 'required',

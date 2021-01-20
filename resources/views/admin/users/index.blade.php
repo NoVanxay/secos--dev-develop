@@ -59,7 +59,7 @@
                         {{ trans('cruds.user.fields.email_verified_at') }}
                     </th>
                     <th>
-                        &nbsp;
+                        &nbsp;&nbsp;
                     </th>
                 </tr>
             </thead>

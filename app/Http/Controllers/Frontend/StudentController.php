@@ -7,12 +7,10 @@ use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyStudentRequest;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
-use App\Models\AcademicYear;
 use App\Models\ClassRoom;
 use App\Models\Role;
 use App\Models\School;
 use App\Models\Student;
-use App\Models\User;
 use Gate;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -26,7 +24,7 @@ class StudentController extends Controller
     {
         abort_if(Gate::denies('student_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $students = Student::with(['classroom', 'school', 'academic_years', 'email', 'roles', 'media'])->get();
+        $students = Student::with(['classroom', 'school', 'roles', 'media'])->get();
 
         return view('frontend.students.index', compact('students'));
     }
@@ -39,13 +37,9 @@ class StudentController extends Controller
 
         $schools = School::all()->pluck('school', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $academic_years = AcademicYear::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
-
-        $emails = User::all()->pluck('email', 'id')->prepend(trans('global.pleaseSelect'), '');
-
         $roles = Role::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('frontend.students.create', compact('classrooms', 'schools', 'academic_years', 'emails', 'roles'));
+        return view('frontend.students.create', compact('classrooms', 'schools', 'roles'));
     }
 
     public function store(StoreStudentRequest $request)
@@ -71,15 +65,11 @@ class StudentController extends Controller
 
         $schools = School::all()->pluck('school', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $academic_years = AcademicYear::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
-
-        $emails = User::all()->pluck('email', 'id')->prepend(trans('global.pleaseSelect'), '');
-
         $roles = Role::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $student->load('classroom', 'school', 'academic_years', 'email', 'roles');
+        $student->load('classroom', 'school', 'roles');
 
-        return view('frontend.students.edit', compact('classrooms', 'schools', 'academic_years', 'emails', 'roles', 'student'));
+        return view('frontend.students.edit', compact('classrooms', 'schools', 'roles', 'student'));
     }
 
     public function update(UpdateStudentRequest $request, Student $student)
@@ -105,7 +95,7 @@ class StudentController extends Controller
     {
         abort_if(Gate::denies('student_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $student->load('classroom', 'school', 'academic_years', 'email', 'roles');
+        $student->load('classroom', 'school', 'roles');
 
         return view('frontend.students.show', compact('student'));
     }

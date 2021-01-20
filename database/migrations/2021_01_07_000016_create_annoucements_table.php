@@ -9,7 +9,7 @@ class CreateAnnoucementsTable extends Migration
     public function up()
     {
         Schema::create('annoucements', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name');
             $table->integer('number');
             $table->string('short_name');

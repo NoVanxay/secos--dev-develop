@@ -56,10 +56,9 @@ class Student extends Model implements HasMedia
         'classroom_id',
         'school_id',
         'end_from',
-        'academic_years_id',
         'phone_no',
         'note',
-        'email_id',
+        'email',
         'password',
         'roles_id',
         'remember_token',
@@ -124,11 +123,6 @@ class Student extends Model implements HasMedia
     public function school()
     {
         return $this->belongsTo(School::class, 'school_id');
-    }
-
-    public function academic_years()
-    {
-        return $this->belongsTo(AcademicYear::class, 'academic_years_id');
     }
 
     public function getPhotoAttribute()

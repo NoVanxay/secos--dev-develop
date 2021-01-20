@@ -40,6 +40,15 @@ class UpdateUserRequest extends FormRequest
                 'max:50',
                 'required',
             ],
+            'district'          => [
+                'string',
+                'min:5',
+                'max:50',
+                'required',
+            ],
+            'province'          => [
+                'required',
+            ],
             'phone_no'      => [
                 'required',
                 'numeric',

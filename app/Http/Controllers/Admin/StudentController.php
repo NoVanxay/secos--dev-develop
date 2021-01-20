@@ -7,12 +7,10 @@ use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyStudentRequest;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
-use App\Models\AcademicYear;
 use App\Models\ClassRoom;
 use App\Models\Role;
 use App\Models\School;
 use App\Models\Student;
-use App\Models\User;
 use Gate;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -29,7 +27,7 @@ class StudentController extends Controller
         abort_if(Gate::denies('student_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
-            $query = Student::with(['classroom', 'school', 'academic_years', 'email', 'roles'])->select(sprintf('%s.*', (new Student)->table));
+            $query = Student::with(['classroom', 'school', 'roles'])->select(sprintf('%s.*', (new Student)->table));
             $table = Datatables::of($query);
 
             $table->addColumn('placeholder', '&nbsp;');
@@ -98,9 +96,6 @@ class StudentController extends Controller
             $table->editColumn('end_from', function ($row) {
                 return $row->end_from ? $row->end_from : "";
             });
-            $table->addColumn('academic_years_title', function ($row) {
-                return $row->academic_years ? $row->academic_years->title : '';
-            });
 
             $table->editColumn('photo', function ($row) {
                 if ($photo = $row->photo) {
@@ -119,18 +114,18 @@ class StudentController extends Controller
             $table->editColumn('note', function ($row) {
                 return $row->note ? $row->note : "";
             });
-            $table->addColumn('email_email', function ($row) {
-                return $row->email ? $row->email->email : '';
+            $table->editColumn('email', function ($row) {
+                return $row->email ? $row->email : '';
             });
 
-            $table->editColumn('email.email', function ($row) {
+          /*   $table->editColumn('email.email', function ($row) {
                 return $row->email ? (is_string($row->email) ? $row->email : $row->email->email) : '';
-            });
+            }); */
             $table->addColumn('roles_title', function ($row) {
                 return $row->roles ? $row->roles->title : '';
             });
 
-            $table->rawColumns(['actions', 'placeholder', 'classroom', 'school', 'academic_years', 'photo', 'email', 'roles']);
+            $table->rawColumns(['actions', 'placeholder', 'classroom', 'school',  'photo',  'roles']);
 
             return $table->make(true);
         }
@@ -146,13 +141,9 @@ class StudentController extends Controller
 
         $schools = School::all()->pluck('school', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $academic_years = AcademicYear::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
-
-        $emails = User::all()->pluck('email', 'id')->prepend(trans('global.pleaseSelect'), '');
-
         $roles = Role::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.students.create', compact('classrooms', 'schools', 'academic_years', 'emails', 'roles'));
+        return view('admin.students.create', compact('classrooms', 'schools',  'roles'));
     }
 
     public function store(StoreStudentRequest $request)
@@ -178,15 +169,11 @@ class StudentController extends Controller
 
         $schools = School::all()->pluck('school', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $academic_years = AcademicYear::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
-
-        $emails = User::all()->pluck('email', 'id')->prepend(trans('global.pleaseSelect'), '');
-
         $roles = Role::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $student->load('classroom', 'school', 'academic_years', 'email', 'roles');
+        $student->load('classroom', 'school',  'roles');
 
-        return view('admin.students.edit', compact('classrooms', 'schools', 'academic_years', 'emails', 'roles', 'student'));
+        return view('admin.students.edit', compact('classrooms', 'schools', 'roles', 'student'));
     }
 
     public function update(UpdateStudentRequest $request, Student $student)
@@ -212,7 +199,7 @@ class StudentController extends Controller
     {
         abort_if(Gate::denies('student_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $student->load('classroom', 'school', 'academic_years', 'email', 'roles');
+        $student->load('classroom', 'school', 'roles');
 
         return view('admin.students.show', compact('student'));
     }

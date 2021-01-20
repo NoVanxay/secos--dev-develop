@@ -12,8 +12,17 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="header-opening-time text-lg-right text-center">
-                            <span><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">ເຂົ້າສູ່ລະບົບ</a></span>
-                            <span><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">ລົງທະບຽນ</a></span>
+                            @if (Route::has('login'))
+                            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                             @auth
+                               <a href="{{ url('/admin') }}" class="text-sm text-gray-700 underline">ເຂົ້າໜ້າແອັດມິນ</a>
+                              @else
+                              <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">ເຂົ້າສູ່ລະບົບ &nbsp;</a>
+                             @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="text-sm text-gray-700 underline" >&nbsp; ລົງທະບຽນ</a>
+                             @endif
+                     @endif
+                     @endif </div>
                         </div>
                     </div>
                 </div>

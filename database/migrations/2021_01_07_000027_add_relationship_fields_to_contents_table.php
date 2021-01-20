@@ -9,7 +9,7 @@ class AddRelationshipFieldsToContentsTable extends Migration
     public function up()
     {
         Schema::table('contents', function (Blueprint $table) {
-            $table->unsignedInteger('users_id')->nullable();
+            $table->unsignedBigInteger('users_id')->nullable();
             $table->foreign('users_id', 'users_fk_2912295')->references('id')->on('users');
         });
     }

@@ -120,7 +120,7 @@
 
   let languages = {
     'English': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json',
-        'Lao': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Lao.json'
+        'Lao': 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/English.json'
   };
 
   $.extend(true, $.fn.dataTable.Buttons.defaults.dom.button, { className: 'btn' })

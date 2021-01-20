@@ -68,7 +68,7 @@
                             {{ trans('cruds.user.fields.district') }}
                         </th>
                         <td>
-                            {{ App\Models\User::DISTRICT_SELECT[$user->district] ?? '' }}
+                            {{ $user->district }}
                         </td>
                     </tr>
                     <tr>
@@ -125,7 +125,7 @@
     </div>
 </div>
 
-<div class="card">
+{{-- <div class="card">
     <div class="card-header">
         {{ trans('global.relatedData') }}
     </div>
@@ -141,6 +141,6 @@
             @includeIf('admin.users.relationships.emailStudents', ['students' => $user->emailStudents])
         </div>
     </div>
-</div>
+</div> --}}
 
 @endsection

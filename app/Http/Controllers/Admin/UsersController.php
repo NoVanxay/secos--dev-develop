@@ -57,13 +57,11 @@ class UsersController extends Controller
             $table->editColumn('gender', function ($row) {
                 return $row->gender ? User::GENDER_RADIO[$row->gender] : '';
             });
-
-
             $table->editColumn('village', function ($row) {
                 return $row->village ? $row->village : "";
             });
             $table->editColumn('district', function ($row) {
-                return $row->district ? User::DISTRICT_SELECT[$row->district] : '';
+                return $row->district ? $row->district : "";
             });
             $table->editColumn('province', function ($row) {
                 return $row->province ? User::PROVINCE_SELECT[$row->province] : '';
@@ -124,6 +122,7 @@ class UsersController extends Controller
     public function update(UpdateUserRequest $request, User $user)
     {
         $user->update($request->all());
+
         $user->roles()->sync($request->input('roles', []));
 
         return redirect()->route('admin.users.index');
@@ -132,8 +131,6 @@ class UsersController extends Controller
     public function show(User $user)
     {
         abort_if(Gate::denies('user_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
-        $user->load('roles', 'emailStudents');
 
         return view('admin.users.show', compact('user'));
     }

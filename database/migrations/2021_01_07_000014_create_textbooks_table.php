@@ -9,7 +9,7 @@ class CreateTextbooksTable extends Migration
     public function up()
     {
         Schema::create('textbooks', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name')->unique();
             $table->timestamps();
             $table->softDeletes();

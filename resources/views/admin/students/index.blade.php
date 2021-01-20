@@ -74,9 +74,6 @@
                         {{ trans('cruds.student.fields.end_from') }}
                     </th>
                     <th>
-                        {{ trans('cruds.student.fields.academic_years') }}
-                    </th>
-                    <th>
                         {{ trans('cruds.student.fields.photo') }}
                     </th>
                     <th>
@@ -89,13 +86,10 @@
                         {{ trans('cruds.student.fields.email') }}
                     </th>
                     <th>
-                        {{ trans('cruds.user.fields.email') }}
-                    </th>
-                    <th>
                         {{ trans('cruds.student.fields.roles') }}
                     </th>
                     <th>
-                        &nbsp;
+                        &nbsp;&nbsp;
                     </th>
                 </tr>
             </thead>
@@ -166,12 +160,10 @@
 { data: 'classroom_class_room', name: 'classroom.class_room' },
 { data: 'school_school', name: 'school.school' },
 { data: 'end_from', name: 'end_from' },
-{ data: 'academic_years_title', name: 'academic_years.title' },
 { data: 'photo', name: 'photo', sortable: false, searchable: false },
 { data: 'phone_no', name: 'phone_no' },
 { data: 'note', name: 'note' },
-{ data: 'email_email', name: 'email.email' },
-{ data: 'email.email', name: 'email.email' },
+{ data: 'email', name: 'email' },
 { data: 'roles_title', name: 'roles.title' },
 { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],

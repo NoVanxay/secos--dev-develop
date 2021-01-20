@@ -55,13 +55,8 @@
                 <span class="help-block">{{ trans('cruds.user.fields.village_helper') }}</span>
             </div>
             <div class="form-group">
-                <label>{{ trans('cruds.user.fields.district') }}</label>
-                <select class="form-control {{ $errors->has('district') ? 'is-invalid' : '' }}" name="district" id="district">
-                    <option value disabled {{ old('district', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
-                    @foreach(App\Models\User::DISTRICT_SELECT as $key => $label)
-                        <option value="{{ $key }}" {{ old('district', '') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
-                    @endforeach
-                </select>
+                <label class="required" for="district">{{ trans('cruds.user.fields.district') }}</label>
+                <input class="form-control {{ $errors->has('district') ? 'is-invalid' : '' }}" type="text" name="district" id="district" value="{{ old('district', '') }}" required>
                 @if($errors->has('district'))
                     <span class="text-danger">{{ $errors->first('district') }}</span>
                 @endif

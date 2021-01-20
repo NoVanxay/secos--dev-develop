@@ -9,7 +9,7 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('st_code')->unique();
             $table->string('first_name');
             $table->string('last_name');
@@ -25,6 +25,7 @@ class CreateStudentsTable extends Migration
             $table->string('end_from');
             $table->integer('phone_no')->nullable();
             $table->string('note')->nullable();
+            $table->string('email')->nullable();
             $table->string('password');
             $table->string('remember_token')->nullable();
             $table->timestamps();

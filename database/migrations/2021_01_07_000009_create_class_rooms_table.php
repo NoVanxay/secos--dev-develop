@@ -9,7 +9,7 @@ class CreateClassRoomsTable extends Migration
     public function up()
     {
         Schema::create('class_rooms', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('class_room');
             $table->timestamps();
             $table->softDeletes();

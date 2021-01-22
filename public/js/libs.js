@@ -1,12 +1,5 @@
 
-// try {
-//     window.$ = window.jQuery = require('../libs/jquery.min.js');
-
-// } catch (e) { }
-
 require('../libs/ajax-contact.js');
-require('../libs/app.js');
-require('../libs/bootstrap.js');
 require('../libs/jquery-1.12.4.js');
 require('../libs/jquery.countdown.js');
 require('../libs/jquery.counterup.js');

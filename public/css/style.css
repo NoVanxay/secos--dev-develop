@@ -517,6 +517,9 @@ p {
 .navigation .navbar{
     padding: 0;
 }
+.navigation {
+    padding: 0;
+}
 
 .navigation .navbar .navbar-nav{}
 .navigation .navbar .navbar-nav li{
@@ -529,7 +532,7 @@ p {
 
 .navigation .navbar .navbar-nav li a{
     font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 700;
     color: #07294d;
     text-transform: uppercase;

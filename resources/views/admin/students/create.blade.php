@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <label class="required">{{ trans('cruds.student.fields.gender') }}</label>
-                @foreach(App\Models\Student::GENDER_RADIO as $key => $label)
+                @foreach(App\Constant\app::GENDER_RADIO as $key => $label)
                     <div class="form-check {{ $errors->has('gender') ? 'is-invalid' : '' }}">
                         <input class="form-check-input" type="radio" id="gender_{{ $key }}" name="gender" value="{{ $key }}" {{ old('gender', '2') === (string) $key ? 'checked' : '' }} required>
                         <label class="form-check-label" for="gender_{{ $key }}">{{ $label }}</label>
@@ -63,8 +63,13 @@
                 <span class="help-block">{{ trans('cruds.student.fields.village_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="district">{{ trans('cruds.student.fields.district') }}</label>
-                <input class="form-control {{ $errors->has('district') ? 'is-invalid' : '' }}" type="text" name="district" id="district" value="{{ old('district', '') }}" required>
+                <label class="required">{{ trans('cruds.student.fields.district') }}</label>
+                <select class="form-control {{ $errors->has('district') ? 'is-invalid' : '' }}" name="district" id="district" required>
+                    <option value disabled {{ old('district', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                    @foreach(App\Constant\app::DISTRICT_SELECT as $key => $label)
+                        <option value="{{ $key }}" {{ old('district', '1') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
+                    @endforeach
+                </select>
                 @if($errors->has('district'))
                     <span class="text-danger">{{ $errors->first('district') }}</span>
                 @endif
@@ -74,7 +79,7 @@
                 <label class="required">{{ trans('cruds.student.fields.province') }}</label>
                 <select class="form-control {{ $errors->has('province') ? 'is-invalid' : '' }}" name="province" id="province" required>
                     <option value disabled {{ old('province', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
-                    @foreach(App\Models\Student::PROVINCE_SELECT as $key => $label)
+                    @foreach(App\Constant\app::PROVINCE_SELECT as $key => $label)
                         <option value="{{ $key }}" {{ old('province', '1') === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
                     @endforeach
                 </select>

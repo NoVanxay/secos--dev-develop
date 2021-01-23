@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateUserRequest;
 use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Models\Role;
 use App\Models\User;
+use App\Constant\app;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -55,16 +56,16 @@ class UsersController extends Controller
                 return $row->last_name ? $row->last_name : "";
             });
             $table->editColumn('gender', function ($row) {
-                return $row->gender ? User::GENDER_RADIO[$row->gender] : '';
+                return $row->gender ? app::GENDER_RADIO[$row->gender] : '';
             });
             $table->editColumn('village', function ($row) {
                 return $row->village ? $row->village : "";
             });
-            $table->editColumn('district', function ($row) {
-                return $row->district ? $row->district : "";
+             $table->editColumn('district', function ($row) {
+                return $row->district ? app::DISTRICT_SELECT[$row->district] : '';
             });
             $table->editColumn('province', function ($row) {
-                return $row->province ? User::PROVINCE_SELECT[$row->province] : '';
+                return $row->province ? app::PROVINCE_SELECT[$row->province] : '';
             });
             $table->editColumn('phone_no', function ($row) {
                 return $row->phone_no ? $row->phone_no : "";

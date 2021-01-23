@@ -114,7 +114,7 @@
                                     {{ $student->last_name ?? '' }}
                                 </td>
                                 <td>
-                                    {{ App\Models\Student::GENDER_RADIO[$student->gender] ?? '' }}
+                                    {{ App\Constant\app::GENDER_RADIO[$student->gender] ?? '' }}
                                 </td>
                                 <td>
                                     {{ $student->date_of_birth ?? '' }}
@@ -123,10 +123,10 @@
                                     {{ $student->village ?? '' }}
                                 </td>
                                 <td>
-                                    {{ $student->district ?? '' }}
+                                    {{ App\Constant\app::DISTRICT_SELECT[$student->district] ?? '' }}
                                 </td>
                                 <td>
-                                    {{ App\Models\Student::PROVINCE_SELECT[$student->province] ?? '' }}
+                                    {{ App\Constant\app::PROVINCE_SELECT[$student->province] ?? '' }}
                                 </td>
                                 <td>
                                     {{ $student->father_name ?? '' }}

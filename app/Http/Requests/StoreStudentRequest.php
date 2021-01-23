@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use App\Models\Student;
 use Gate;
+use App\Constant\App;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
 
@@ -50,9 +51,6 @@ class StoreStudentRequest extends FormRequest
                 'required',
             ],
             'district'          => [
-                'string',
-                'min:5',
-                'max:50',
                 'required',
             ],
             'province'          => [

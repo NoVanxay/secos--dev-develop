@@ -5,7 +5,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-about mt-40">
                         <div class="logo">
-                            <a href="{{ url('/welcome') }}"  <img src="{{ URL::to('/assets/frontend/images/logo.png') }}"></a>
+                            <a href="{{ url('/') }}"  <img src="{{ URL::to('/assets/frontend/images/logo.png') }}"></a>
                         </div>
                         <p>Gravida nibh vel velit auctor aliquetn quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate.</p>
                         <ul class="mt-20">

@@ -8,6 +8,7 @@ use App\Http\Requests\MassDestroySchoolRequest;
 use App\Http\Requests\StoreSchoolRequest;
 use App\Http\Requests\UpdateSchoolRequest;
 use App\Models\School;
+use App\constant\app;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -52,10 +53,10 @@ class SchoolController extends Controller
                 return $row->village ? $row->village : "";
             });
             $table->editColumn('district', function ($row) {
-                return $row->district ? $row->district : "";
+                return $row->district ? app::DISTRICT_SELECT[$row->district] : '';
             });
             $table->editColumn('province', function ($row) {
-                return $row->province ? School::PROVINCE_SELECT[$row->province] : '';
+                return $row->province ? app::PROVINCE_SELECT[$row->province] : '';
             });
 
             $table->rawColumns(['actions', 'placeholder']);

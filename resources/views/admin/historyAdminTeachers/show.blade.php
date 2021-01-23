@@ -64,7 +64,7 @@
                             {{ trans('cruds.historyAdminTeacher.fields.gender') }}
                         </th>
                         <td>
-                            {{ App\Models\HistoryAdminTeacher::GENDER_RADIO[$historyAdminTeacher->gender] ?? '' }}
+                            {{ App\Constant\app::GENDER_RADIO[$historyAdminTeacher->gender] ?? '' }}
                         </td>
                     </tr>
                     <tr>
@@ -112,7 +112,7 @@
                             {{ trans('cruds.historyAdminTeacher.fields.religion') }}
                         </th>
                         <td>
-                            {{ App\Models\HistoryAdminTeacher::RELIGION_SELECT[$historyAdminTeacher->religion] ?? '' }}
+                            {{ App\Constant\app::RELIGION_SELECT[$historyAdminTeacher->religion] ?? '' }}
                         </td>
                     </tr>
                     <tr>
@@ -136,7 +136,7 @@
                             {{ trans('cruds.historyAdminTeacher.fields.province_birth') }}
                         </th>
                         <td>
-                            {{ App\Models\HistoryAdminTeacher::PROVINCE_BIRTH_SELECT[$historyAdminTeacher->province_birth] ?? '' }}
+                            {{ App\Constant\app::PROVINCE_SELECT[$historyAdminTeacher->province_birth] ?? '' }}
                         </td>
                     </tr>
                     <tr>
@@ -144,7 +144,7 @@
                             {{ trans('cruds.historyAdminTeacher.fields.district_birth') }}
                         </th>
                         <td>
-                            {{ $historyAdminTeacher->district_birth }}
+                            {{ App\Constant\app::DISTRICT_SELECT[$historyAdminTeacher->district_birth] ?? '' }}
                         </td>
                     </tr>
                     <tr>
@@ -160,7 +160,7 @@
                             {{ trans('cruds.historyAdminTeacher.fields.current_province') }}
                         </th>
                         <td>
-                            {{ App\Models\HistoryAdminTeacher::CURRENT_PROVINCE_SELECT[$historyAdminTeacher->current_province] ?? '' }}
+                            {{ App\Constant\app::PROVINCE_SELECT[$historyAdminTeacher->current_province] ?? '' }}
                         </td>
                     </tr>
                     <tr>
@@ -168,7 +168,7 @@
                             {{ trans('cruds.historyAdminTeacher.fields.current_district') }}
                         </th>
                         <td>
-                            {{ $historyAdminTeacher->current_district }}
+                            {{ App\Constant\app::DISTRICT_SELECT[$historyAdminTeacher->current_district] ?? '' }}
                         </td>
                     </tr>
                     <tr>

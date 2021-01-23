@@ -30,27 +30,6 @@ class School extends Model
         'deleted_at',
     ];
 
-    const PROVINCE_SELECT = [
-        'Attapeu'  => 'ອັດຕະປື',
-        'Bokeo'  => 'ບໍ່ແກ້ວ',
-        'Bolikhamxai'  => 'ບໍລິຄຳໄຊ',
-        'Champasak'  => 'ຈຳປາສັກ',
-        'Houaphanh'  => 'ຫົວພັນ',
-        'Khammouane'  => 'ຄຳມ່ວນ',
-        'Luang Namtha'  => 'ຫຼວງນ້ຳທາ',
-        'Luang Prabang'  => 'ຫຼວງພະບາງ',
-        'Oudomxay'  => 'ອຸດົມໄຊ',
-        'Phongsaly' => 'ພົງສາລີ',
-        'Salavan' => 'ສາລະວັນ',
-        'Savannakhet' => 'ສະຫວັນນະເຂດ',
-        'Vientiane' => 'ນະຄອນຫຼວງວຽງຈັນ',
-        'Vientiane Prefecture' => 'ວຽງຈັນ',
-        'Xaignabouli' => 'ໄຊຍະບູລີ',
-        'Sekong' => 'ເຊກອງ',
-        'Xaisomboun' => 'ໄຊສົມບູນ',
-        'Xiangkhouang' => 'ຊຽງຂວາງ',
-    ];
-
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d H:i:s');

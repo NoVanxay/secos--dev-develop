@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Constant\app;
 use App\Models\User;
 use Gate;
 use Illuminate\Foundation\Http\FormRequest;
@@ -41,9 +42,6 @@ class UpdateUserRequest extends FormRequest
                 'required',
             ],
             'district'          => [
-                'string',
-                'min:5',
-                'max:50',
                 'required',
             ],
             'province'          => [

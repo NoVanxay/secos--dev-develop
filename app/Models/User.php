@@ -29,18 +29,6 @@ class User extends Authenticatable
         'password',
     ];
 
-
-   /*  const DISTRICT_SELECT = [
-
-    ]; */
-
-    const GENDER_RADIO = [
-        'Male' => 'ຊາຍ',
-        'Female' => 'ຍິງ',
-    ];
-
-
-
     protected $dates = [
         'email_verified_at',
         'created_at',
@@ -69,26 +57,7 @@ class User extends Authenticatable
         'deleted_at',
     ];
 
-    const PROVINCE_SELECT = [
-        'Attapeu'  => 'ອັດຕະປື',
-        'Bokeo'  => 'ບໍ່ແກ້ວ',
-        'Bolikhamxai'  => 'ບໍລິຄຳໄຊ',
-        'Champasak'  => 'ຈຳປາສັກ',
-        'Houaphanh'  => 'ຫົວພັນ',
-        'Khammouane'  => 'ຄຳມ່ວນ',
-        'Luang Namtha'  => 'ຫຼວງນ້ຳທາ',
-        'Luang Prabang'  => 'ຫຼວງພະບາງ',
-        'Oudomxay'  => 'ອຸດົມໄຊ',
-        'Phongsaly' => 'ພົງສາລີ',
-        'Salavan' => 'ສາລະວັນ',
-        'Savannakhet' => 'ສະຫວັນນະເຂດ',
-        'Vientiane' => 'ນະຄອນຫຼວງວຽງຈັນ',
-        'Vientiane Prefecture' => 'ວຽງຈັນ',
-        'Xaignabouli' => 'ໄຊຍະບູລີ',
-        'Sekong' => 'ເຊກອງ',
-        'Xaisomboun' => 'ໄຊສົມບູນ',
-        'Xiangkhouang' => 'ຊຽງຂວາງ',
-    ];
+
 
     protected function serializeDate(DateTimeInterface $date)
     {

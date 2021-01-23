@@ -11,6 +11,7 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use \DateTimeInterface;
+use App\Constant\app;
 
 class HistoryAdminTeacher extends Model implements HasMedia
 {
@@ -22,11 +23,6 @@ class HistoryAdminTeacher extends Model implements HasMedia
 
     public $table = 'history_admin_teachers';
 
-    const GENDER_RADIO = [
-        'Male' => 'ຊາຍ',
-        'Female' => 'ຍິງ',
-    ];
-
     protected $dates = [
         'date_of_birth',
         'pabbajja',
@@ -34,57 +30,6 @@ class HistoryAdminTeacher extends Model implements HasMedia
         'created_at',
         'updated_at',
         'deleted_at',
-    ];
-
-    const RELIGION_SELECT = [
-        'Buddhist' => 'ພຸດ',
-        'Cristian' => 'ຄຣິສ',
-        'Islam' => 'ອິສລາມ',
-        'Hindu' => 'ຮິນດູ',
-        'Other' => 'ອື່ນໆ',
-        'None religion' => 'ບໍ່ມີ',
-    ];
-
-    const CURRENT_PROVINCE_SELECT = [
-        'Attapeu'  => 'ອັດຕະປື',
-        'Bokeo'  => 'ບໍ່ແກ້ວ',
-        'Bolikhamxai'  => 'ບໍລິຄຳໄຊ',
-        'Champasak'  => 'ຈຳປາສັກ',
-        'Houaphanh'  => 'ຫົວພັນ',
-        'Khammouane'  => 'ຄຳມ່ວນ',
-        'Luang Namtha'  => 'ຫຼວງນ້ຳທາ',
-        'Luang Prabang'  => 'ຫຼວງພະບາງ',
-        'Oudomxay'  => 'ອຸດົມໄຊ',
-        'Phongsaly' => 'ພົງສາລີ',
-        'Salavan' => 'ສາລະວັນ',
-        'Savannakhet' => 'ສະຫວັນນະເຂດ',
-        'Vientiane' => 'ນະຄອນຫຼວງວຽງຈັນ',
-        'Vientiane Prefecture' => 'ວຽງຈັນ',
-        'Xaignabouli' => 'ໄຊຍະບູລີ',
-        'Sekong' => 'ເຊກອງ',
-        'Xaisomboun' => 'ໄຊສົມບູນ',
-        'Xiangkhouang' => 'ຊຽງຂວາງ',
-    ];
-
-    const PROVINCE_BIRTH_SELECT = [
-        'Attapeu'  => 'ອັດຕະປື',
-        'Bokeo'  => 'ບໍ່ແກ້ວ',
-        'Bolikhamxai'  => 'ບໍລິຄຳໄຊ',
-        'Champasak'  => 'ຈຳປາສັກ',
-        'Houaphanh'  => 'ຫົວພັນ',
-        'Khammouane'  => 'ຄຳມ່ວນ',
-        'Luang Namtha'  => 'ຫຼວງນ້ຳທາ',
-        'Luang Prabang'  => 'ຫຼວງພະບາງ',
-        'Oudomxay'  => 'ອຸດົມໄຊ',
-        'Phongsaly' => 'ພົງສາລີ',
-        'Salavan' => 'ສາລະວັນ',
-        'Savannakhet' => 'ສະຫວັນນະເຂດ',
-        'Vientiane' => 'ນະຄອນຫຼວງວຽງຈັນ',
-        'Vientiane Prefecture' => 'ວຽງຈັນ',
-        'Xaignabouli' => 'ໄຊຍະບູລີ',
-        'Sekong' => 'ເຊກອງ',
-        'Xaisomboun' => 'ໄຊສົມບູນ',
-        'Xiangkhouang' => 'ຊຽງຂວາງ',
     ];
 
     protected $fillable = [

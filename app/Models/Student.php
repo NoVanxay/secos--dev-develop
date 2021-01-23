@@ -33,12 +33,7 @@ class Student extends Model implements HasMedia
         'deleted_at',
     ];
 
-    const GENDER_RADIO = [
-        'Monk' => 'ພຣະ',
-        'Novice' => 'ສ.ນ',
-        'Male' => 'ຊາຍ',
-        'Female' => 'ຍິງ',
-    ];
+
 
     protected $fillable = [
         'st_code',
@@ -67,26 +62,6 @@ class Student extends Model implements HasMedia
         'deleted_at',
     ];
 
-    const PROVINCE_SELECT = [
-        'Attapeu'  => 'ອັດຕະປື',
-        'Bokeo'  => 'ບໍ່ແກ້ວ',
-        'Bolikhamxai'  => 'ບໍລິຄຳໄຊ',
-        'Champasak'  => 'ຈຳປາສັກ',
-        'Houaphanh'  => 'ຫົວພັນ',
-        'Khammouane'  => 'ຄຳມ່ວນ',
-        'Luang Namtha'  => 'ຫຼວງນ້ຳທາ',
-        'Luang Prabang'  => 'ຫຼວງພະບາງ',
-        'Oudomxay'  => 'ອຸດົມໄຊ',
-        'Phongsaly' => 'ພົງສາລີ',
-        'Salavan' => 'ສາລະວັນ',
-        'Savannakhet' => 'ສະຫວັນນະເຂດ',
-        'Vientiane' => 'ນະຄອນຫຼວງວຽງຈັນ',
-        'Vientiane Prefecture' => 'ວຽງຈັນ',
-        'Xaignabouli' => 'ໄຊຍະບູລີ',
-        'Sekong' => 'ເຊກອງ',
-        'Xaisomboun' => 'ໄຊສົມບູນ',
-        'Xiangkhouang' => 'ຊຽງຂວາງ',
-    ];
 
     protected function serializeDate(DateTimeInterface $date)
     {

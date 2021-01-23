@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use App\Models\HistoryAdminTeacher;
 use Gate;
+use App\Constant\app;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
 
@@ -86,9 +87,6 @@ class StoreHistoryAdminTeacherRequest extends FormRequest
                 'required',
             ],
             'district_birth'      => [
-                'string',
-                'min:2',
-                'max:50',
                 'required',
             ],
             'village_birth'       => [
@@ -101,9 +99,6 @@ class StoreHistoryAdminTeacherRequest extends FormRequest
                 'required',
             ],
             'current_district'    => [
-                'string',
-                'min:2',
-                'max:50',
                 'required',
             ],
             'current_village'     => [

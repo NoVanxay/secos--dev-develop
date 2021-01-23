@@ -10,6 +10,7 @@ use App\Http\Requests\UpdateStudentRequest;
 use App\Models\ClassRoom;
 use App\Models\Role;
 use App\Models\School;
+use App\Constant\app;
 use App\Models\Student;
 use Gate;
 use Illuminate\Http\Request;
@@ -63,12 +64,11 @@ class StudentController extends Controller
             $table->editColumn('gender', function ($row) {
                 return $row->gender ? Student::GENDER_RADIO[$row->gender] : '';
             });
-
             $table->editColumn('village', function ($row) {
                 return $row->village ? $row->village : "";
             });
             $table->editColumn('district', function ($row) {
-                return $row->district ? $row->district : "";
+                return $row->district ? Student::DISTRICT_SELECT[$row->district] : '';
             });
             $table->editColumn('province', function ($row) {
                 return $row->province ? Student::PROVINCE_SELECT[$row->province] : '';

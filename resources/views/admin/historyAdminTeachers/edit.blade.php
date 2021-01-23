@@ -45,7 +45,7 @@
             </div>
             <div class="form-group">
                 <label class="required">{{ trans('cruds.historyAdminTeacher.fields.gender') }}</label>
-                @foreach(App\Models\HistoryAdminTeacher::GENDER_RADIO as $key => $label)
+                @foreach(App\Constant\app::GENDER_RADIO as $key => $label)
                     <div class="form-check {{ $errors->has('gender') ? 'is-invalid' : '' }}">
                         <input class="form-check-input" type="radio" id="gender_{{ $key }}" name="gender" value="{{ $key }}" {{ old('gender', $historyAdminTeacher->gender) === (string) $key ? 'checked' : '' }} required>
                         <label class="form-check-label" for="gender_{{ $key }}">{{ $label }}</label>
@@ -100,7 +100,7 @@
                 <label class="required">{{ trans('cruds.historyAdminTeacher.fields.religion') }}</label>
                 <select class="form-control {{ $errors->has('religion') ? 'is-invalid' : '' }}" name="religion" id="religion" required>
                     <option value disabled {{ old('religion', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
-                    @foreach(App\Models\HistoryAdminTeacher::RELIGION_SELECT as $key => $label)
+                    @foreach(App\Constant\app::RELIGION_SELECT as $key => $label)
                         <option value="{{ $key }}" {{ old('religion', $historyAdminTeacher->religion) === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
                     @endforeach
                 </select>
@@ -129,7 +129,7 @@
                 <label class="required">{{ trans('cruds.historyAdminTeacher.fields.province_birth') }}</label>
                 <select class="form-control {{ $errors->has('province_birth') ? 'is-invalid' : '' }}" name="province_birth" id="province_birth" required>
                     <option value disabled {{ old('province_birth', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
-                    @foreach(App\Models\HistoryAdminTeacher::PROVINCE_BIRTH_SELECT as $key => $label)
+                    @foreach(App\Constant\app::PROVINCE_SELECT as $key => $label)
                         <option value="{{ $key }}" {{ old('province_birth', $historyAdminTeacher->province_birth) === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
                     @endforeach
                 </select>
@@ -139,8 +139,13 @@
                 <span class="help-block">{{ trans('cruds.historyAdminTeacher.fields.province_birth_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="district_birth">{{ trans('cruds.historyAdminTeacher.fields.district_birth') }}</label>
-                <input class="form-control {{ $errors->has('district_birth') ? 'is-invalid' : '' }}" type="text" name="district_birth" id="district_birth" value="{{ old('district_birth', $historyAdminTeacher->district_birth) }}" required>
+                <label class="required">{{ trans('cruds.historyAdminTeacher.fields.district_birth') }}</label>
+                <select class="form-control {{ $errors->has('district_birth') ? 'is-invalid' : '' }}" name="district_birth" id="district_birth" required>
+                    <option value disabled {{ old('district_birth', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                    @foreach(App\Constant\app::DISTRICT_SELECT as $key => $label)
+                        <option value="{{ $key }}" {{ old('district_birth', $historyAdminTeacher->district_birth) === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
+                    @endforeach
+                </select>
                 @if($errors->has('district_birth'))
                     <span class="text-danger">{{ $errors->first('district_birth') }}</span>
                 @endif
@@ -158,7 +163,7 @@
                 <label class="required">{{ trans('cruds.historyAdminTeacher.fields.current_province') }}</label>
                 <select class="form-control {{ $errors->has('current_province') ? 'is-invalid' : '' }}" name="current_province" id="current_province" required>
                     <option value disabled {{ old('current_province', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
-                    @foreach(App\Models\HistoryAdminTeacher::CURRENT_PROVINCE_SELECT as $key => $label)
+                    @foreach(App\Constant\app::PROVINCE_SELECT as $key => $label)
                         <option value="{{ $key }}" {{ old('current_province', $historyAdminTeacher->current_province) === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
                     @endforeach
                 </select>
@@ -168,8 +173,13 @@
                 <span class="help-block">{{ trans('cruds.historyAdminTeacher.fields.current_province_helper') }}</span>
             </div>
             <div class="form-group">
-                <label class="required" for="current_district">{{ trans('cruds.historyAdminTeacher.fields.current_district') }}</label>
-                <input class="form-control {{ $errors->has('current_district') ? 'is-invalid' : '' }}" type="text" name="current_district" id="current_district" value="{{ old('current_district', $historyAdminTeacher->current_district) }}" required>
+                <label class="required">{{ trans('cruds.historyAdminTeacher.fields.current_district') }}</label>
+                <select class="form-control {{ $errors->has('current_district') ? 'is-invalid' : '' }}" name="current_district" id="current_district" required>
+                    <option value disabled {{ old('current_district', null) === null ? 'selected' : '' }}>{{ trans('global.pleaseSelect') }}</option>
+                    @foreach(App\Constant\app::DISTRICT_SELECT as $key => $label)
+                        <option value="{{ $key }}" {{ old('current_district', $historyAdminTeacher->current_district) === (string) $key ? 'selected' : '' }}>{{ $label }}</option>
+                    @endforeach
+                </select>
                 @if($errors->has('current_district'))
                     <span class="text-danger">{{ $errors->first('current_district') }}</span>
                 @endif

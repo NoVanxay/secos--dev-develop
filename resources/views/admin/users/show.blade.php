@@ -44,7 +44,7 @@
                             {{ trans('cruds.user.fields.gender') }}
                         </th>
                         <td>
-                            {{ App\Models\User::GENDER_RADIO[$user->gender] ?? '' }}
+                            {{ App\Constant\app::GENDER_RADIO[$user->gender] ?? '' }}
                         </td>
                     </tr>
                     <tr>
@@ -68,7 +68,7 @@
                             {{ trans('cruds.user.fields.district') }}
                         </th>
                         <td>
-                            {{ $user->district }}
+                            {{ App\Constant\app::DISTRICT_SELECT[$user->district] ?? '' }}
                         </td>
                     </tr>
                     <tr>
@@ -76,7 +76,7 @@
                             {{ trans('cruds.user.fields.province') }}
                         </th>
                         <td>
-                            {{ App\Models\User::PROVINCE_SELECT[$user->province] ?? '' }}
+                            {{ App\Constant\app::PROVINCE_SELECT[$user->province] ?? '' }}
                         </td>
                     </tr>
                     <tr>

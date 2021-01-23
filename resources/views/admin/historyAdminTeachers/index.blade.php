@@ -138,7 +138,7 @@
                                 {{ $historyAdminTeacher->last_name ?? '' }}
                             </td>
                             <td>
-                                {{ App\Models\HistoryAdminTeacher::GENDER_RADIO[$historyAdminTeacher->gender] ?? '' }}
+                                {{ App\Constant\app::GENDER_RADIO[$historyAdminTeacher->gender] ?? '' }}
                             </td>
                             <td>
                                 {{ $historyAdminTeacher->eng_name ?? '' }}
@@ -156,7 +156,7 @@
                                 {{ $historyAdminTeacher->tribes ?? '' }}
                             </td>
                             <td>
-                                {{ App\Models\HistoryAdminTeacher::RELIGION_SELECT[$historyAdminTeacher->religion] ?? '' }}
+                                {{ App\Constant\app::RELIGION_SELECT[$historyAdminTeacher->religion] ?? '' }}
                             </td>
                             <td>
                                 {{ $historyAdminTeacher->pabbajja ?? '' }}
@@ -165,19 +165,19 @@
                                 {{ $historyAdminTeacher->identification_card ?? '' }}
                             </td>
                             <td>
-                                {{ App\Models\HistoryAdminTeacher::PROVINCE_BIRTH_SELECT[$historyAdminTeacher->province_birth] ?? '' }}
+                                {{ App\Constant\app::PROVINCE_SELECT[$historyAdminTeacher->province_birth] ?? '' }}
                             </td>
                             <td>
-                                {{ $historyAdminTeacher->district_birth ?? '' }}
+                                {{ App\Constant\app::DISTRICT_SELECT[$historyAdminTeacher->district_birth] ?? '' }}
                             </td>
                             <td>
                                 {{ $historyAdminTeacher->village_birth ?? '' }}
                             </td>
                             <td>
-                                {{ App\Models\HistoryAdminTeacher::CURRENT_PROVINCE_SELECT[$historyAdminTeacher->current_province] ?? '' }}
+                                {{ App\Constant\app::PROVINCE_SELECT[$historyAdminTeacher->current_province] ?? '' }}
                             </td>
                             <td>
-                                {{ $historyAdminTeacher->current_district ?? '' }}
+                                {{ App\Constant\app::DISTRICT_SELECT[$historyAdminTeacher->current_district] ?? '' }}
                             </td>
                             <td>
                                 {{ $historyAdminTeacher->current_village ?? '' }}

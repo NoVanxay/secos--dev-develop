@@ -74,7 +74,7 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item">
-                                        <a class="active" href="{{ url('#') }}"> ໜ້າຫຼັກ</a>
+                                        <a class="active" href="{{ url('/') }}"> ໜ້າຫຼັກ</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="{{ route('frontend.annoucements.index') }}">

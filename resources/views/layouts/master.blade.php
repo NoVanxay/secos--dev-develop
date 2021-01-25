@@ -640,11 +640,11 @@
         </div> <!-- container -->
     </section>
 
-    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+<a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
 @include('partials.footer')
 <script src="{{ asset(mix('/js/libs.js', 'frontend')) }}"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
 @yield("extraScript")
 </body>
 </html>

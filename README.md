@@ -18,3 +18,7 @@
 - php artisan migrate:fresh --seed
 - php artisan serve
 - ຖ້າເຈີເລກໄອພີ http://127.0.0.1:8000 ກອບເລກໄອພີແລະພັອດ ແລ້ວວ່າງຢູ່ Browser
+
+ການເຂົ້າສູ່ລະບົບ
+ຊື່ຜູ້ໃຊ້       'admin@admin.com'
+ລະຫັດຜ່ານ    'password'

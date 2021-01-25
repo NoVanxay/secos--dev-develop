@@ -20,7 +20,7 @@
 - php aritsan key:generate
 - php artisan migrate:fresh --seed
 - php artisan serve
-- ຖ້າເຈີເລກໄອພີ http://127.0.0.1:8000 ກອບເລກໄອພີແລະພັອດ ແລ້ວວ່າງຢູ່ Browser
+- ຖ້າເຈີເລກໄອພີ http://127.0.0.1:8000 ກອບເລກໄອພີແລະພັອດ ແລ້ວວ່າງຢູ່ URL Browser
 
 ການເຂົ້າສູ່ລະບົບ
 

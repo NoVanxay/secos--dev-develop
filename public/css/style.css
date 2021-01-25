@@ -1,55 +1,21 @@
-/*
-  Theme Name: Edubin - LMS Education HTML Template
-  Author: ZeTheme
-  Author URL: https://themeforest.net/user/pixelcurve
-  Support: zetheme24@gmail.com
-  Description: Creative  HTML5 template.
-  Version: 1.1
-*/
+@font-face {
+    font-family: 'Noto Sans Lao';
+    src: url('../font/Noto Sans Lao.woff2') format('woff2'),
+         url('../font/Noto Sans Lao.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
-/* CSS Index
------------------------------------
-1. Theme default
-2. HEADER
-3. SLIDER
-4. CATEGORY
-5. ABOUT
-6. APPLY
-7. COURSE
-8. VIDEO FEATURES
-9. TEACHERS
-10. PUBLICATION
-11. TEASTIMONIAL
-12. NEWS
-13. FOOTER
-14. CATEGORY 2
-15. COURSE 2
-16. COUNTER
-17. TEACHERS 2
-18. EVENT 2
-19. COUNT DOWN
-20. PAGE BANNER
-21. ABOUT PAGE
-22. COURSES PAGE
-23. COURSE SINGEl PAGE
-24. EVENT PAGE
-25. EVENT SINGEL PAGE
-26. TEACHERS SInGEL PAGE
-27. BLOG PAGE
-28. BLOG SINGEL PAGE
-29. SHOP PAGE
-30. SHOP SINGEL PAGE
-31. CONTACT PAGE
+}
 
-*/
+@font-face {
+    font-family: 'Noto Sans Lao-bold';
+    src: url('../font/Noto Sans Lao-bold.woff2') format('woff2'),
+         url('../font/Noto Sans Lao-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
+}
 
-/*===========================
-    1. Theme default css
-===========================*/
-
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Roboto:300,400,500,700');
 
  body {
 	font-family: 'Noto Sans Lao', sans-serif;
@@ -88,7 +54,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Noto Sans Lao', sans-serif;
 	font-weight: 700;
 	color: #1d2025;
 	margin: 0px;
@@ -149,7 +115,7 @@ p {
 	border: 1px solid #ffc600;
 	padding: 0 35px;
 	font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 700;
 	line-height: 50px;
 	border-radius: 5px;
@@ -466,7 +432,7 @@ p {
 .support-button .support .cont span{
     font-size: 18px;
     color: #07294d;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 700;
 }
 
@@ -794,7 +760,7 @@ p {
 }
 .slider-cont h1{
     font-size: 60px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 700;
     color: #fff;
     padding-bottom: 25px;
@@ -901,7 +867,7 @@ p {
 }
 .slider-search .nice-select span {
 	font-size: 16px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     color: #07294d;
     font-weight: 400;
 }
@@ -926,7 +892,7 @@ p {
     border-left: 1px solid #a8a8a8;
     padding-left: 25px;
     font-size: 16px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     color: #8a8a8a;
 }
 .slider-search .main-btn {
@@ -1012,7 +978,7 @@ p {
     color: #fff;
     font-size: 18px;
     padding-top: 15px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 700;
 }
 
@@ -1202,7 +1168,7 @@ p {
 .singel-course .thum .price span{
     font-size: 14px;
     color: #07294d;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 700;
     width: 55px;
     height: 55px;
@@ -1905,7 +1871,7 @@ p {
 .category-form .form-title span{
     font-size: 24px;
     color: #fff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
 }
 .category-form .main-form{
     padding-top: 20px;
@@ -1955,7 +1921,7 @@ p {
 .singel-course-2 > .thum .price span {
 	font-size: 14px;
 	color: #07294d;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Noto Sans Lao', sans-serif;
 	font-weight: 700;
 	width: 55px;
 	height: 55px;
@@ -2036,11 +2002,11 @@ p {
 .singel-counter span{
     font-size: 36px;
     color: #ffc600;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 600;
 }
 .singel-counter p{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 400;
     color: #fff;
     font-size: 15px;
@@ -2256,13 +2222,13 @@ p {
 .count-down-time .singel-count .number{
     font-size: 72px;
     color: #fff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 600;
     display: block;
 }
 .count-down-time .singel-count .title{
     color: #fff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 600;
     font-size: 18px;
     display: block;
@@ -2340,7 +2306,7 @@ p {
 .about-singel-items span{
     font-size: 60px;
     color: #dbdbdb;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 400;
     line-height: 46px;
     padding-bottom: 22px;
@@ -2489,7 +2455,7 @@ p {
 .corses-singel-left .course-terms ul li .course-category span{
     color: #8a8a8a;
     font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 600;
 }
 
@@ -2531,7 +2497,7 @@ p {
 	font-size: 16px;
 	color: #24486e;
 	font-weight: 600;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Noto Sans Lao', sans-serif;
 	padding: 20px 0;
 	display: block;
     background-color: #edf0f2;
@@ -2546,7 +2512,7 @@ p {
 .overview-description .singel-description{}
 .overview-description .singel-description h6{
     font-size: 18px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 600;
     color: #000;
     padding-bottom: 10px;
@@ -2558,7 +2524,7 @@ p {
 }
 .curriculam-cont .title h6{
     font-size: 18px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 600;
     color: #000;
     padding-bottom: 30px;
@@ -2629,7 +2595,7 @@ p {
 .curriculam-cont .accordion .card .card-header a ul li > .head{
     font-size: 16px;
     font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     margin-left: 15px;
     color: #000;
 }
@@ -2705,7 +2671,7 @@ p {
 }
 .reviews-cont .title h6{
     font-size: 18px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 600;
     color: #000;
 }
@@ -2744,7 +2710,7 @@ p {
     font-size: 15px;
     color: #8a8a8a;
     font-weight: 400;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
 }
 
 .reviews-cont ul li .singel-reviews .reviews-description{}
@@ -2861,7 +2827,7 @@ p {
 .course-features .price-button span{
     font-size: 18px;
     color: #24486e;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 700;
     margin-top: 12px;
 }
@@ -3375,7 +3341,7 @@ p {
 .blog-details .cont .share li.title{
     font-size: 18px;
     color: #000;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     font-weight: 600;
 }
 .blog-details .cont .share > li{
@@ -3458,7 +3424,7 @@ p {
     font-size: 15px;
 	color: #8a8a8a;
 	font-weight: 400;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Noto Sans Lao', sans-serif;
 }
 .blog-comment .comment .comment-replay {
 	position: absolute;
@@ -3656,7 +3622,7 @@ p {
     background-color: #315377;
     font-size: 15px;
     font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Noto Sans Lao', sans-serif;
     text-align: center;
     color: #fff;
     -webkit-transition: all 0.4s linear;

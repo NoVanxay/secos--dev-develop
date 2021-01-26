@@ -2,32 +2,30 @@
         <div class="header-top d-none d-lg-block">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="header-contact text-lg-left text-center">
-                            <ul >
-                               <span style="color: white"> <i class="fa fa-phone"></i> 02022618243</span>&nbsp;
-                               <span style="color: white"> <i class="fa fa-envelope-o"></i>&nbsp;<a href="mailto:Inthapunya@gmail.com">Inthapunya@gmail.com</span>
-                            </ul>
-                        </div>
+                    <div class="col-lg-8">
+                        <span class="header-contact text-center">
+                                <span style="color: white"> <i class="fa fa-phone"></i> 02022618243</span>&nbsp;
+                                <span style="color: white"> <i class="fa fa-envelope-o"></i>&nbsp;<a href="mailto:Inthapunya@gmail.com">Inthapunya@gmail.com</span>
+                        </span>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="header-opening-time text-lg-right text-center">
+                    <div class="col-lg-4 text-lg-right">
+                        <span class="header-contact text-center">
                             @if (Route::has('login'))
-                            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                             @auth
-                               <a href="{{ url('/admin') }}" class="text-sm text-gray-700 underline">ເຂົ້າໜ້າແອັດມິນ</a>
-                              @else
-                              <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">ເຂົ້າສູ່ລະບົບ &nbsp;</a>
-                             @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="text-sm text-gray-700 underline" >&nbsp; ລົງທະບຽນ</a>
-                             @endif
-                     @endif
-                     @endif </div>
-                        </div>
+
+                            @auth
+                              <a href="{{ url('/admin') }}" class="text-sm text-gray-700 underline">ເຂົ້າໜ້າແອັດມິນ</a>
+                             @else
+                             <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">ເຂົ້າສູ່ລະບົບ &nbsp;</a>
+                            @if (Route::has('register'))
+                           <a href="{{ route('register') }}" class="text-sm text-gray-700 underline" >&nbsp; ລົງທະບຽນ</a>
+                            @endif
+                    @endif
+                    @endif
+                        </span>
                     </div>
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div>
      <!-- header top -->
         <div class="header-logo-support pt-30 pb-30">
             <div class="container">

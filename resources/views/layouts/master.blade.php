@@ -10,8 +10,8 @@
     <meta name="author" content="Sangha Education Commission Office of Savannakhet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="shortcut icon" href="{{ asset('frontend/images/favicon.png') }}">
+    <link rel="stylesheet" href=" {{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href=" {{ asset(mix('/css/libs.css', 'frontend')) }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     @yield("extraStyle")
 </head>
@@ -434,13 +434,20 @@
     </section>
 
 <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-
 @include('partials.footer')
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-<script src="{{ asset(mix('/js/libs.js', 'frontend')) }}"></script>
-
+<script src="{{ asset('libs/vendor/modernizr-3.6.0.min.js') }}"></script>
+<script src="{{ asset('libs/vendor/jquery-1.12.4.min.js') }}"></script>
+<script src="{{ asset('libs/bootstrap.min.js') }}"></script>
+<script src="{{ asset('libs/slick.js') }}"></script>
+<script src="{{ asset('libs/jquery.magnific-popup.js') }}"></script>
+<script src="{{ asset('libs/waypoints.js') }}"></script>
+<script src="{{ asset('libs/jquery.counterup.js') }}"></script>
+<script src="{{ asset('libs/jquery.nice-select.js') }}"></script>
+<script src="{{ asset('libs/jquery.nice-number.js') }}"></script>
+<script src="{{ asset('libs/jquery.countdown.js') }}"></script>
+<script src="{{ asset('libs/validator.js') }}"></script>
+<script src="{{ asset('libs/ajax-contact.js') }}"></script>
+<script src="{{ asset('libs/main.js') }}"></script>
 @yield("extraScript")
 </body>
 </html>

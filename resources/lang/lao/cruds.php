@@ -332,7 +332,7 @@ return [
             'id_helper'           => ' ',
             'subject_code'        => 'ລະຫັດວິຊາ',
             'subject_code_helper' => ' ',
-            'subject'             => 'ວິຊາ',
+            'subject'             => 'ຫົວຂໍ້',
             'subject_helper'      => ' ',
             'classroom'           => 'ຫ້ອງຮຽນ',
             'classroom_helper'    => ' ',

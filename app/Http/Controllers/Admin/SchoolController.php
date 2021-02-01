@@ -8,7 +8,7 @@ use App\Http\Requests\MassDestroySchoolRequest;
 use App\Http\Requests\StoreSchoolRequest;
 use App\Http\Requests\UpdateSchoolRequest;
 use App\Models\School;
-use App\constant\app;
+use App\Constant\App;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

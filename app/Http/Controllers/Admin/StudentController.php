@@ -7,6 +7,7 @@ use App\Http\Controllers\Traits\MediaUploadingTrait;
 use App\Http\Requests\MassDestroyStudentRequest;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
+use App\Models\AcademicYear;
 use App\Models\ClassRoom;
 use App\Models\Role;
 use App\Models\School;
@@ -28,7 +29,7 @@ class StudentController extends Controller
         abort_if(Gate::denies('student_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         if ($request->ajax()) {
-            $query = Student::with(['classroom', 'school', 'roles'])->select(sprintf('%s.*', (new Student)->table));
+            $query = Student::with(['classroom', 'academic_years', 'school', 'roles'])->select(sprintf('%s.*', (new Student)->table));
             $table = Datatables::of($query);
 
             $table->addColumn('placeholder', '&nbsp;');
@@ -62,16 +63,16 @@ class StudentController extends Controller
                 return $row->last_name ? $row->last_name : "";
             });
             $table->editColumn('gender', function ($row) {
-                return $row->gender ? Student::GENDER_RADIO[$row->gender] : '';
+                return $row->gender ? app::GENDER_RADIO[$row->gender] : '';
             });
             $table->editColumn('village', function ($row) {
                 return $row->village ? $row->village : "";
             });
             $table->editColumn('district', function ($row) {
-                return $row->district ? Student::DISTRICT_SELECT[$row->district] : '';
+                return $row->district ? app::DISTRICT_SELECT[$row->district] : '';
             });
             $table->editColumn('province', function ($row) {
-                return $row->province ? Student::PROVINCE_SELECT[$row->province] : '';
+                return $row->province ? app::PROVINCE_SELECT[$row->province] : '';
             });
             $table->editColumn('father_name', function ($row) {
                 return $row->father_name ? $row->father_name : "";
@@ -91,6 +92,9 @@ class StudentController extends Controller
 
             $table->addColumn('school_school', function ($row) {
                 return $row->school ? $row->school->school : '';
+            });
+            $table->addColumn('academic_years_title', function ($row) {
+                return $row->academic_years ? $row->academic_years->title : '';
             });
 
             $table->editColumn('end_from', function ($row) {
@@ -139,11 +143,13 @@ class StudentController extends Controller
 
         $classrooms = ClassRoom::all()->pluck('class_room', 'id')->prepend(trans('global.pleaseSelect'), '');
 
+        $academic_years = AcademicYear::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+
         $schools = School::all()->pluck('school', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $roles = Role::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('admin.students.create', compact('classrooms', 'schools',  'roles'));
+        return view('admin.students.create', compact('classrooms', 'academic_years', 'schools',  'roles'));
     }
 
     public function store(StoreStudentRequest $request)
@@ -167,13 +173,15 @@ class StudentController extends Controller
 
         $classrooms = ClassRoom::all()->pluck('class_room', 'id')->prepend(trans('global.pleaseSelect'), '');
 
+        $academic_years = AcademicYear::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+
         $schools = School::all()->pluck('school', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $roles = Role::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $student->load('classroom', 'school',  'roles');
+        $student->load('classroom', 'academic_years', 'school',  'roles');
 
-        return view('admin.students.edit', compact('classrooms', 'schools', 'roles', 'student'));
+        return view('admin.students.edit', compact('classrooms', 'schools', 'academic_years',  'roles', 'student'));
     }
 
     public function update(UpdateStudentRequest $request, Student $student)
@@ -199,7 +207,7 @@ class StudentController extends Controller
     {
         abort_if(Gate::denies('student_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $student->load('classroom', 'school', 'roles');
+        $student->load('classroom', 'academic_years',  'school', 'roles');
 
         return view('admin.students.show', compact('student'));
     }

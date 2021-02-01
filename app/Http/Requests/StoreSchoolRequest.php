@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Models\School;
 use Gate;
-use App\constant\app;
+use App\Constant\App;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Response;
 
@@ -32,16 +32,10 @@ class StoreSchoolRequest extends FormRequest
                 'required',
             ],
             'district' => [
-                'string',
-                'min:5',
-                'max:50',
                 'required',
 
             ],
             'province' => [
-                'string',
-                'min:5',
-                'max:50',
                 'required',
 
             ],

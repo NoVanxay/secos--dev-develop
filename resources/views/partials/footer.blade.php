@@ -28,13 +28,13 @@
                             <li><a href="blog.html"><i class="fa fa-angle-right"></i>News</a></li>
                             <li><a href="events.html"><i class="fa fa-angle-right"></i>Event</a></li>
                         </ul>
-                        <ul>
+                       {{--  <ul>
                             <li><a href="#"><i class="fa fa-angle-right"></i>Gallery</a></li>
                             <li><a href="shop.html"><i class="fa fa-angle-right"></i>Shop</a></li>
                             <li><a href="teachers.html"><i class="fa fa-angle-right"></i>Teachers</a></li>
                             <li><a href="#"><i class="fa fa-angle-right"></i>Support</a></li>
                             <li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact</a></li>
-                        </ul>
+                        </ul> --}}
                     </div> <!-- footer link -->
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
@@ -78,7 +78,7 @@
                                     <i class="fa fa-envelope-o"></i>
                                 </div>
                                 <div class="cont">
-                                    <a href="mailto:{{'Inthapunya@gmail.com'}}"></a>
+                                    <a href="mailto:Inthapunya@gmail.com">Inthapunya@gmail.com</a>
                                 </div>
                             </li>
                         </ul>

@@ -48,6 +48,7 @@ class Student extends Model implements HasMedia
         'father_no',
         'mother_name',
         'mother_no',
+        'academic_years_id',
         'classroom_id',
         'school_id',
         'end_from',
@@ -100,6 +101,10 @@ class Student extends Model implements HasMedia
         return $this->belongsTo(School::class, 'school_id');
     }
 
+    public function academic_years()
+    {
+        return $this->belongsTo(AcademicYear::class, 'academic_years_id');
+    }
     public function getPhotoAttribute()
     {
         $file = $this->getMedia('photo')->last();

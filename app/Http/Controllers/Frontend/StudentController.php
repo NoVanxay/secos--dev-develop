@@ -8,6 +8,7 @@ use App\Http\Requests\MassDestroyStudentRequest;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use App\Models\ClassRoom;
+use App\Models\AcademicYear;
 use App\Models\Role;
 use App\Models\School;
 use App\Models\Student;
@@ -24,7 +25,7 @@ class StudentController extends Controller
     {
         abort_if(Gate::denies('student_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $students = Student::with(['classroom', 'school', 'roles', 'media'])->get();
+        $students = Student::with(['classroom', 'academic_years', 'school', 'roles', 'media'])->get();
 
         return view('frontend.students.index', compact('students'));
     }
@@ -35,11 +36,13 @@ class StudentController extends Controller
 
         $classrooms = ClassRoom::all()->pluck('class_room', 'id')->prepend(trans('global.pleaseSelect'), '');
 
+        $academic_years = AcademicYear::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+
         $schools = School::all()->pluck('school', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $roles = Role::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        return view('frontend.students.create', compact('classrooms', 'schools', 'roles'));
+        return view('frontend.students.create', compact('classrooms', 'academic_years', 'schools', 'roles'));
     }
 
     public function store(StoreStudentRequest $request)
@@ -63,13 +66,15 @@ class StudentController extends Controller
 
         $classrooms = ClassRoom::all()->pluck('class_room', 'id')->prepend(trans('global.pleaseSelect'), '');
 
+        $academic_years = AcademicYear::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
+
         $schools = School::all()->pluck('school', 'id')->prepend(trans('global.pleaseSelect'), '');
 
         $roles = Role::all()->pluck('title', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $student->load('classroom', 'school', 'roles');
+        $student->load('classroom',  'academic_years', 'school', 'roles');
 
-        return view('frontend.students.edit', compact('classrooms', 'schools', 'roles', 'student'));
+        return view('frontend.students.edit', compact('classrooms', 'academic_years', 'schools', 'roles', 'student'));
     }
 
     public function update(UpdateStudentRequest $request, Student $student)
@@ -95,7 +100,7 @@ class StudentController extends Controller
     {
         abort_if(Gate::denies('student_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $student->load('classroom', 'school', 'roles');
+        $student->load('classroom', 'academic_years', 'school', 'roles');
 
         return view('frontend.students.show', compact('student'));
     }

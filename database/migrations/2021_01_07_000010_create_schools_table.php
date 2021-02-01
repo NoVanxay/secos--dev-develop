@@ -13,7 +13,7 @@ class CreateSchoolsTable extends Migration
             $table->string('school')->unique();
             $table->string('village');
             $table->string('district');
-            $table->string('province')->nullable();
+            $table->string('province');
             $table->timestamps();
             $table->softDeletes();
         });

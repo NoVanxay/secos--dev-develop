@@ -84,6 +84,10 @@ class UpdateStudentRequest extends FormRequest
                 'required',
                 'integer',
             ],
+            'academic_years_id' => [
+                'required',
+                'integer',
+            ],
             'school_id'         => [
                 'required',
                 'integer',

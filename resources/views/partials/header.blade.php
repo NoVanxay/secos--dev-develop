@@ -5,7 +5,7 @@
                     <div class="col-lg-8">
                         <span class="header-contact text-center">
                                 <span style="color: white"> <i class="fa fa-phone"></i> 02022618243</span>&nbsp;
-                                <span style="color: white"> <i class="fa fa-envelope-o"></i>&nbsp;<a href="mailto:Inthapunya@gmail.com">Inthapunya@gmail.com</span>
+                                <span style="color: white"> <i class="fa fa-envelope-o"></i>&nbsp;<a href="mailto:Inthapunya@gmail.com">Inthapunya@gmail.com</a></span>
                         </span>
                     </div>
                     <div class="col-lg-4 text-lg-right">

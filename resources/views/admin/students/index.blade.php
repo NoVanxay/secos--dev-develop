@@ -71,6 +71,9 @@
                         {{ trans('cruds.student.fields.school') }}
                     </th>
                     <th>
+                        {{ trans('cruds.student.fields.academic_years') }}
+                    </th>
+                    <th>
                         {{ trans('cruds.student.fields.end_from') }}
                     </th>
                     <th>
@@ -143,7 +146,7 @@
     aaSorting: [],
     ajax: "{{ route('admin.students.index') }}",
     columns: [
-      { data: 'placeholder', name: 'placeholder' },
+{ data: 'placeholder', name: 'placeholder' },
 { data: 'id', name: 'id' },
 { data: 'st_code', name: 'st_code' },
 { data: 'first_name', name: 'first_name' },
@@ -159,6 +162,7 @@
 { data: 'mother_no', name: 'mother_no' },
 { data: 'classroom_class_room', name: 'classroom.class_room' },
 { data: 'school_school', name: 'school.school' },
+{ data: 'academic_years_title', name: 'academic_years.title' },
 { data: 'end_from', name: 'end_from' },
 { data: 'photo', name: 'photo', sortable: false, searchable: false },
 { data: 'phone_no', name: 'phone_no' },

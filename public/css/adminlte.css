@@ -8541,7 +8541,7 @@ body,
   .main-footer,
   .main-header {
     transition: margin-left 0.3s ease-in-out;
-    margin-left: 250px;
+    margin-left: 270px;
     z-index: 3000;
   }
 }
@@ -8589,7 +8589,7 @@ body,
 
 .main-sidebar, .main-sidebar:before {
   transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
-  width: 250px;
+  width: 270px;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

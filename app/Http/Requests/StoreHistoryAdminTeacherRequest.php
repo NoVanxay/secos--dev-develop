@@ -130,7 +130,7 @@ class StoreHistoryAdminTeacherRequest extends FormRequest
                 'nullable',
                 'numeric',
                 'min:-2147483648',
-                'max:2147483647',,
+                'max:2147483647',
             ],
             'census'              => [
                 'string',

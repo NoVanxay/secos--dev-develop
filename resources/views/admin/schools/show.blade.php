@@ -44,7 +44,7 @@
                             {{ trans('cruds.school.fields.district') }}
                         </th>
                         <td>
-                            {{ App\Constant\app::DiSTRICT_SELECT[$school->district] ?? '' }}
+                            {{ App\Constant\app::DISTRICT_SELECT[$school->district] ?? '' }}
                         </td>
                     </tr>
                     <tr>

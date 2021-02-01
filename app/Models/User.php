@@ -94,12 +94,12 @@ class User extends Authenticatable
             }
         });
     }
-
+/*
     public static function boot() // sent email notification
     {
         parent::boot();
         User::observe(new \App\Observers\UserActionObserver);
-    }
+    } */
 
     public function registerMediaConversions(Media $media = null): void
     {

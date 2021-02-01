@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Constant;
-
+use App\Models\HistoryAdminTeacher;
+use App\Models\student;
+use App\Models\School;
 use App\Models\User;
 
 class App

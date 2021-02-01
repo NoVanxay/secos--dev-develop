@@ -88,6 +88,10 @@ class StoreStudentRequest extends FormRequest
                 'required',
                 'integer',
             ],
+            'academic_years_id' => [
+                'required',
+                'integer',
+            ],
             'end_from'          => [
                 'string',
                 'min:5',

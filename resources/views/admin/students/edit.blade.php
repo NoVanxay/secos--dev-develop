@@ -146,6 +146,18 @@
                 <span class="help-block">{{ trans('cruds.student.fields.school_helper') }}</span>
             </div>
             <div class="form-group">
+                <label class="required" for="academic_years_id">{{ trans('cruds.student.fields.academic_years') }}</label>
+                <select class="form-control select2 {{ $errors->has('academic_years') ? 'is-invalid' : '' }}" name="academic_years_id" id="academic_years_id" required>
+                    @foreach($academic_years as $id => $academic_years)
+                        <option value="{{ $id }}" {{ (old('academic_years_id') ? old('academic_years_id') : $student->academic_years->id ?? '') == $id ? 'selected' : '' }}>{{ $academic_years }}</option>
+                    @endforeach
+                </select>
+                @if($errors->has('academic_years'))
+                    <span class="text-danger">{{ $errors->first('academic_years') }}</span>
+                @endif
+                <span class="help-block">{{ trans('cruds.student.fields.academic_years_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label class="required" for="end_from">{{ trans('cruds.student.fields.end_from') }}</label>
                 <input class="form-control {{ $errors->has('end_from') ? 'is-invalid' : '' }}" type="text" name="end_from" id="end_from" value="{{ old('end_from', $student->end_from) }}" required>
                 @if($errors->has('end_from'))

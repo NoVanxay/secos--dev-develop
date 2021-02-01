@@ -137,6 +137,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.student.fields.academic_years') }}
+                        </th>
+                        <td>
+                            {{ $student->academic_years->title ?? '' }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.student.fields.end_from') }}
                         </th>
                         <td>
